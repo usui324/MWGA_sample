@@ -1,5 +1,8 @@
 package main.evaluate;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import main.agent.Agent;
 import main.network.Link;
 import main.network.Network;
@@ -15,6 +18,8 @@ public class EaDiminishMetaRewardGame extends EvaluateAlgorithm {
 //------------------------------
 	@Override
 	public int startEA(Network network, Sfmt sfmt) {
+
+		List<Article> articleList = new ArrayList<>();
 
 		double prob=0;
 

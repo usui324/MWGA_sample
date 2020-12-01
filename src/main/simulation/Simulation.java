@@ -65,6 +65,7 @@ public class Simulation implements Parameter{
 			//evaluate
 			for(Network network : multipleNetwork.networkList) {
 				timeout += ea.startEA(network, sfmt);
+				ea.reset();
 			}
 
 			//record

@@ -1,6 +1,6 @@
 package main.entry;
 
-import main.evaluate.EaMetaRewardGame;
+import main.evaluate.EaSnsNormsGame;
 import main.network.NmConnectingNearestNeighbor;
 import main.utility.Seed;
 import main.utility.Sfmt;
@@ -14,9 +14,9 @@ public class Launcher extends Thread implements Parameter{
 
 		//-----------------------------------------------------------
 
-		EaMetaRewardGame ea = new EaMetaRewardGame();
+//		EaMetaRewardGame ea = new EaMetaRewardGame();
 //		EaDiminishMetaRewardGame ea = new EaDiminishMetaRewardGame();
-//		EaSnsNormsGame ea = new EaSnsNormsGame();
+		EaSnsNormsGame ea = new EaSnsNormsGame();
 
 		//-----------------------------------------------------------
 
