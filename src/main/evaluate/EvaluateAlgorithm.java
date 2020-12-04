@@ -3,7 +3,7 @@ package main.evaluate;
 import main.network.Network;
 import main.utility.Sfmt;
 
-public abstract class EvaluateAlgorithm implements IEvaluate {
+public abstract class EvaluateAlgorithm implements IEvaluate , Cloneable{
 
 	protected String name = null;
 
@@ -14,9 +14,10 @@ public abstract class EvaluateAlgorithm implements IEvaluate {
 
 	}
 
+//------------------------------
 	public abstract int startEA(Network network, Sfmt sfmt);
 
-	public String getName() {
+	public synchronized String getName() {
 		return name;
 	}
 

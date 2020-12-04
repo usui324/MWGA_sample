@@ -16,7 +16,7 @@ public class NmCompleteGragh extends Network {
 
 //----------------------------------------
 	@Override
-	public void setNetwork(Sfmt sfmt) {
+	public synchronized void setNetwork(Sfmt sfmt) {
 		// TODO 自動生成されたメソッド・スタブ
 		for(int number=0; number<NUM_OF_AGENT; number++) {
 

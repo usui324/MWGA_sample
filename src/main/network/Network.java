@@ -63,13 +63,13 @@ public class Network implements INetwork{
 	}
 
 //----------------------------------------
-	public void setNetwork(Sfmt sfmt) {
+	public synchronized void setNetwork(Sfmt sfmt) {
 
 		System.out.println("This is abstract method in Network.setNetwork");
 		System.exit(1);
 	}
 
-	public void resetNetwork() {
+	public synchronized void resetNetwork() {
 
 		linkListList.clear();
 		agentList.clear();

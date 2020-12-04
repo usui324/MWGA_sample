@@ -35,6 +35,7 @@ public class GeneticAlgorithm implements IGeneticAlgorithm{
 				//uniform cross over
 				uniformCrossOver(agent, networkNumber, parent1, parent2, sfmt);
 
+
 				//mutaiton
 				mutation(nextGeneration.networkList.get(networkNumber).agentList.get(agent.getNumber()), sfmt);
 				//finish ga for one agent
@@ -74,6 +75,7 @@ public class GeneticAlgorithm implements IGeneticAlgorithm{
 		for(Agent brother : brotherList) {
 			fitnessSum += (brother.getFitness() - fitnessMin);
 		}
+
 
 		//select
 		double roulette = (double)sfmt.NextInt((int)fitnessSum);
@@ -123,6 +125,7 @@ public class GeneticAlgorithm implements IGeneticAlgorithm{
 		for(int d=0; d<gene.getDigit(); d++) {
 			if(sfmt.NextUnif() < MUTATION_RATE) {
 				gene.changeBit(d);
+
 			}
 		}
 	}
@@ -149,6 +152,7 @@ public class GeneticAlgorithm implements IGeneticAlgorithm{
 			maxFitnessAgent = brotherList.get(maxFitnessIndex);
 			agent.getB().setGene(maxFitnessAgent.getB().getGene());
 			agent.getL().setGene(maxFitnessAgent.getL().getGene());
+
 
 		}
 	}

@@ -23,7 +23,16 @@ public class MetaComment implements IEvaluate {
 //---------------------------------------
 	public void metaComment() {
 
+//		if(getMaster().getNumber()==X) {
+//			System.out.println("meta before:"+ getMaster().getFitness());
+//		}
 		master.addFitness(CN);
+
+//		if(getMaster().getNumber()==X) {
+//
+//			System.out.println("meta after:"+ getMaster().getFitness());
+//			System.out.println("");
+//		}
 
 		master.numOfMetaComment++;
 

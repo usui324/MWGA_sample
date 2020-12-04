@@ -78,17 +78,55 @@ public class EaSnsNormsGame extends EvaluateAlgorithm{
 
 			double commentReward = R * Math.log(article.commentList.size() + 1);
 
+//			if(article.getMaster() == network.agentList.get(X)) {
+//				System.out.println("getc bofore:"+ article.getMaster().getFitness());
+//			}
+
 			article.getMaster().addFitness(commentReward);
+
+//			if(article.getMaster() == network.agentList.get(X)) {
+//				System.out.println("getc number:"+ article.getNumOfComment() + " score:" + commentReward);
+//				System.out.println("getc after:"+ article.getMaster().getFitness());
+//				System.out.println("");
+//			}
 
 			for(Comment comment : article.commentList) {
 
 				double metaCommentReward = RN * Math.log(comment.metaCommentList.size() + 1);
 
+//				if(comment.getMaster() == network.agentList.get(X)) {
+//					System.out.println("getm bofore:"+ comment.getMaster().getFitness());
+//				}
+
 				comment.getMaster().addFitness(metaCommentReward);
+
+//				if(comment.getMaster() == network.agentList.get(X)) {
+//					System.out.println("getm number:"+ comment.getNumOfMetaComment() + " score:" + metaCommentReward);
+//					System.out.println("getm after:"+ comment.getMaster().getFitness());
+//					System.out.println("");
+//				}
 			}
 		}
 
+//		System.out.println("------------------------------------");
+
 		return numOfTimeout;
+	}
+
+//---------------------
+	@Override
+	public EaSnsNormsGame clone() {
+		EaSnsNormsGame ea = null;
+
+		try {
+			ea = (EaSnsNormsGame)super.clone();
+			ea.name = this.name;
+
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return ea;
 	}
 
 

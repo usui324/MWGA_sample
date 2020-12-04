@@ -23,7 +23,8 @@ public class NmConnectingNearestNeighbor extends Network{
 	}
 
 //----------------------------------------
-	public void setNetwork(Sfmt sfmt) {
+	@Override
+	public synchronized void setNetwork(Sfmt sfmt) {
 
 		for(int number=0; number<NUM_OF_STARTING_AGENT_IN_CNN;number++) {
 			Agent agent = new Agent(number);

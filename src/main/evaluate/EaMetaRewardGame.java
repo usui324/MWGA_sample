@@ -53,6 +53,7 @@ public class EaMetaRewardGame extends EvaluateAlgorithm {
 
 					Comment comment = new Comment(commenter, article);
 					comment.comment();
+
 				}
 
 				//meta comment phase
@@ -71,6 +72,7 @@ public class EaMetaRewardGame extends EvaluateAlgorithm {
 
 						MetaComment metaComment = new MetaComment(metaCommenter, comment);
 						metaComment.metaComment();
+
 					}
 				}
 			}
@@ -82,7 +84,12 @@ public class EaMetaRewardGame extends EvaluateAlgorithm {
 
 			double commentReward = R * article.commentList.size();
 
+//			System.out.println("agent"+ article.getMaster().getNumber()+ " bofore:"+ article.getMaster().getFitness());
 			article.getMaster().addFitness(commentReward);
+//			System.out.println("agent"+ article.getMaster().getNumber()+ " score:"+ article.getNumOfComment() + " score:" + commentReward);
+//			System.out.println("agent"+ article.getMaster().getNumber()+ " after:"+ article.getMaster().getFitness());
+//			System.out.println("");
+
 
 			for(Comment comment : article.commentList) {
 
@@ -95,5 +102,19 @@ public class EaMetaRewardGame extends EvaluateAlgorithm {
 		return numOfTimeout;
 	}
 
+//---------------------
+	@Override
+	public EaMetaRewardGame clone() {
+		EaMetaRewardGame ea = null;
 
+		try {
+			ea = (EaMetaRewardGame)super.clone();
+			ea.name = this.name;
+
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return ea;
+	}
 }

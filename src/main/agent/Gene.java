@@ -36,6 +36,17 @@ public class Gene implements IGene{
 		double result = (double)getGeneToInt();
 		return result / (Math.pow(2, digit) - 1);
 	}
+	public String getGeneToPrint() {
+		String result = "[";
+		for(int d=0; d<digit; d++) {
+			result = result + String.valueOf(gene[d]);
+			if(d!=digit-1) {
+				result = result + ", ";
+			}
+		}
+		result = result + "]";
+		return result;
+	}
 
 //----------------------------------------
 	public void setGene(int value) {

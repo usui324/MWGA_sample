@@ -35,13 +35,31 @@ public class Article implements IEvaluate{
 
 //----------------------------------------
 	public void post() {
+
+//		if(getMaster().getNumber()==X) {
+//			System.out.println("post before:"+ getMaster().getFitness());
+//		}
 		master.addFitness(F);
+
+//		if(getMaster().getNumber()==X) {
+//			System.out.println("post after:"+ getMaster().getFitness());
+//			System.out.println("");
+//		}
 
 		master.numOfPost++;
 
 		for(Link link : master.linkList) {
 
+//			if(link.getTo().getNumber()==X) {
+//				System.out.println("read before:"+ link.getTo().getFitness());
+//			}
+
 			link.getTo().addFitness(M);
+
+//			if(link.getTo().getNumber()==X) {
+//				System.out.println("read after:"+ link.getTo().getFitness());
+//				System.out.println("");
+//			}
 		}
 	}
 	public void receiveComment(Comment comment) {

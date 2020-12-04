@@ -9,5 +9,5 @@ public interface IGene extends Parameter{
 	 *・1 : large distribute
 	 *・6 : small distribute
 	 */
-	public final int MAX_NEXT_NORMAL = 5;
+	public final int MAX_NEXT_NORMAL = 4;
 }

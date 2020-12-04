@@ -150,4 +150,20 @@ public class EaMySns extends EvaluateAlgorithm{
 		return false;
 	}
 
+//---------------------
+	@Override
+	public EaMySns clone() {
+		EaMySns ea = null;
+
+		try {
+			ea = (EaMySns)super.clone();
+			ea.name = this.name;
+
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return ea;
+	}
+
 }

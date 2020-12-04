@@ -1,6 +1,7 @@
 package main.entry;
 
 import main.evaluate.EvaluateAlgorithm;
+import main.network.MultipleNetwork;
 import main.network.Network;
 import main.simulation.Simulation;
 import main.utility.Seed;
@@ -41,7 +42,7 @@ public class SubLauncher extends Thread implements Parameter{
 	}
 
 
-	synchronized public Simulation setSimulation() {
+	public synchronized Simulation setSimulation() {
 
 		if(simulationTime >= NUM_OF_SIMULATION) {
 			return null;
@@ -51,7 +52,11 @@ public class SubLauncher extends Thread implements Parameter{
 		Network network = new Network(-1, nm, sfmt);
 		nm.resetNetwork();
 
-		Simulation simulation = new Simulation(network, ea, simulationTime, ft);
+		MultipleNetwork mn = new MultipleNetwork();
+		mn.setMultipleNetwork(network, sfmt);
+
+
+		Simulation simulation = new Simulation(mn, ea, simulationTime, ft);
 		simulationTime++;
 
 		return simulation;

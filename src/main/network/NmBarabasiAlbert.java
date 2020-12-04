@@ -19,7 +19,7 @@ public class NmBarabasiAlbert extends Network{
 
 //----------------------------------------
 	@Override
-	public void setNetwork(Sfmt sfmt) {
+	public synchronized void setNetwork(Sfmt sfmt) {
 
 		for(int number=0; number<NUM_OF_STARTING_AGENT_IN_BA; number++) {
 
@@ -44,7 +44,7 @@ public class NmBarabasiAlbert extends Network{
 			}
 
 			int rand;
-			Agent remove;
+			Agent remove=null;
 			//start select
 			for(int numOfEdge=0; numOfEdge<NUM_OF_ADD_EDGE_IN_BA; numOfEdge++) {
 
@@ -59,6 +59,7 @@ public class NmBarabasiAlbert extends Network{
 					linkSum -= edge.getNumOfLink();
 					break;
 				}
+				edgeList.remove(remove);
 			}
 			//finish select
 

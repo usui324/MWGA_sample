@@ -11,8 +11,8 @@ public class NetworkResult implements ICsv{
 	private String fileName;
 
 //----------------------------------------
-	public NetworkResult(int simulationTime) {
-		this.fileName = "NetworkResult" + simulationTime + ".csv";
+	public NetworkResult(int simulationTime, int generation) {
+		this.fileName = "NetworkResult" + simulationTime + "_" + generation +".csv";
 	}
 
 //----------------------------------------
@@ -23,7 +23,7 @@ public class NetworkResult implements ICsv{
 
 		writeHeader(filewriter);
 
-
+		writeContent(filewriter);
 
 		return fileName;
 	}

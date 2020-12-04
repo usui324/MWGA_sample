@@ -95,4 +95,20 @@ public class EaDiminishMetaRewardGame extends EvaluateAlgorithm {
 		return numOfTimeout;
 	}
 
+//---------------------
+	@Override
+	public EaDiminishMetaRewardGame clone() {
+		EaDiminishMetaRewardGame ea = null;
+
+		try {
+			ea = (EaDiminishMetaRewardGame)super.clone();
+			ea.name = this.name;
+
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return ea;
+	}
+
 }

@@ -160,4 +160,20 @@ public class EaMyDiminish extends EvaluateAlgorithm {
 		return false;
 	}
 
+//---------------------
+	@Override
+	public EaMyDiminish clone() {
+		EaMyDiminish ea = null;
+
+		try {
+			ea = (EaMyDiminish)super.clone();
+			ea.name = this.name;
+
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return ea;
+	}
+
 }

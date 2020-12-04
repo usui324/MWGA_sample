@@ -17,7 +17,7 @@ public class Simulation implements Parameter{
 
 	private final int LAST_NETWORK = NUM_OF_NETWORK - 1;
 
-	Network network;
+	MultipleNetwork multipleNetwork;
 
 	int simulationTime;
 
@@ -31,8 +31,8 @@ public class Simulation implements Parameter{
 	public int timeout=0;
 
 //----------------------------
-	public Simulation(Network network, EvaluateAlgorithm ea, int time, FileTransfer ft) {
-		this.network = network;
+	public Simulation(MultipleNetwork multipleNetwork, EvaluateAlgorithm ea, int time, FileTransfer ft) {
+		this.multipleNetwork = multipleNetwork;
 		this.ea = ea;
 		simulationTime = time;
 		this.ft = ft;
@@ -52,13 +52,17 @@ public class Simulation implements Parameter{
 
 		System.out.println("Simulation" + simulationTime + " start.");
 
-		//set multiple network
-		MultipleNetwork multipleNetwork = new MultipleNetwork();
-		multipleNetwork.setMultipleNetwork(network, sfmt);
-
 		//ready to record progress
 		NetworkProgress np = new NetworkProgress(simulationTime);
 		String recordFileName = null;
+
+
+//		for(Network n : multipleNetwork.networkList) {
+//			for(Agent a : n.agentList) {
+//				System.out.println("Agent" + a.getNumber() + " B:" + a.getB().getGeneToInt() + " L:" + a.getL().getGeneToInt());
+//			}
+//		}
+
 		//run mwga
 		for(int generation=0; generation<GENERATION; generation++) {
 
@@ -68,16 +72,24 @@ public class Simulation implements Parameter{
 				ea.reset();
 			}
 
-			//record
+			//progress record
 			recordFileName = np.write(generation, multipleNetwork.networkList.get(LAST_NETWORK));
+
+			//result record
+			if(generation%RESULT_GENERATION == 0) {
+
+				NetworkResult nr = new NetworkResult(simulationTime, generation);
+				ft.transfer(nr.write(multipleNetwork.networkList.get(LAST_NETWORK)));
+			}
 
 			//genetic algorithm
 			multipleNetwork = ga.startGA(multipleNetwork, sfmt);
 
-//			System.out.println("Generation" + generation + " finish");
+			System.out.println("Simulation"+ simulationTime + " Generation" + generation + " finish");
 		}
 		for(Network network : multipleNetwork.networkList) {
 			ea.startEA(network, sfmt);
+			ea.reset();
 		}
 		//finish run mwga
 
@@ -85,7 +97,7 @@ public class Simulation implements Parameter{
 		ft.transfer(recordFileName);
 
 		//record result
-		NetworkResult nr = new NetworkResult(simulationTime);
+		NetworkResult nr = new NetworkResult(simulationTime, GENERATION);
 		ft.transfer(nr.write(multipleNetwork.networkList.get(LAST_NETWORK)));
 
 

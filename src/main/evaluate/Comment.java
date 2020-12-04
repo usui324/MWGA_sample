@@ -31,7 +31,15 @@ public class Comment implements IEvaluate {
 
 //---------------------------------------
 	public void comment() {
+//		if(getMaster().getNumber()==X) {
+//			System.out.println("comment before:"+ getMaster().getFitness());
+//		}
 		master.addFitness(C);
+
+//		if(getMaster().getNumber()==X) {
+//			System.out.println("comment after:"+ getMaster().getFitness());
+//			System.out.println("");
+//		}
 
 		master.numOfComment++;
 

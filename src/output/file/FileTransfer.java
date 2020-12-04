@@ -11,7 +11,7 @@ public class FileTransfer {
 	}
 
 //------------------------------------------------
-	public void transfer(String fileName) {
+	public synchronized void transfer(String fileName) {
 
 		String fromName = fileName;
 		String toName = folderName + "\\" + fileName;

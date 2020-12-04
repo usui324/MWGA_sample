@@ -5,13 +5,13 @@ public interface Parameter {
 	public int NUM_OF_SIMULATION = 10;
 
 	//Number of Agent
-	public int NUM_OF_AGENT = 20;
+	public int NUM_OF_AGENT = 1000;
 	//Number of Generation
-	public int GENERATION = 10;
+	public int GENERATION = 2000;
 	//Number of Network
-	public int NUM_OF_NETWORK = 10;
+	public int NUM_OF_NETWORK = 30;
 	//GeneticAlgorithm
-	public double MUTATION_RATE = 0.01;
+	public double MUTATION_RATE = 0.005;
 
 	//BA
 	public int NUM_OF_STARTING_AGENT_IN_BA = 20;
@@ -23,9 +23,11 @@ public interface Parameter {
 	//My Extend
 	public int TIME_OUT = 10;
 
+	//Result File
+	public int RESULT_GENERATION = 200;
+
 	//Dierectory Path
 	public final String DIRECTORY_PATH = "C:\\Users\\yuora\\OneDrive\\デスクトップ\\cache\\";
 	//public final String DERECTORY_PATH = "C:\\Users\\y.usui\\Desktop\\";
-
 
 }
