@@ -23,7 +23,7 @@ public class Simulation implements Parameter{
 
 	EvaluateAlgorithm ea;
 
-	GeneticAlgorithm ga = new GeneticAlgorithm();
+	GeneticAlgorithm ga = new GeneticAlgorithm(INHERITANCE);
 
 	FileTransfer ft;
 

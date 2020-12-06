@@ -20,11 +20,21 @@ public interface Parameter {
 	//CNN
 	public double U_IN_CNN = 0.9;
 
+
 	//My Extend
 	public int TIME_OUT = 10;
 
 	//Result File
 	public int RESULT_GENERATION = 200;
+
+
+	//Inheritance Pattern
+	public enum InheritancePattern {
+		DoubleRouletteIncludeSelf,
+		SingleRouletteNotIncludeSelf
+	}
+	public InheritancePattern INHERITANCE = InheritancePattern.SingleRouletteNotIncludeSelf;
+
 
 	//Dierectory Path
 	public final String DIRECTORY_PATH = "C:\\Users\\yuora\\OneDrive\\デスクトップ\\cache\\";

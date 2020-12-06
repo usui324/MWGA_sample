@@ -14,8 +14,10 @@ public class GeneticAlgorithm implements IGeneticAlgorithm{
 	MultipleNetwork thisGeneration;
 	MultipleNetwork nextGeneration;
 
+	InheritancePattern ip;
 
-	public GeneticAlgorithm() {
+	public GeneticAlgorithm(InheritancePattern ip) {
+		this.ip = ip;
 	}
 
 //-------------------------------
@@ -29,8 +31,25 @@ public class GeneticAlgorithm implements IGeneticAlgorithm{
 			for(Agent agent : thisGeneration.networkList.get(networkNumber).agentList) {
 				//ga for one agent
 				//roulette
-				Agent parent1 = rouletteChoice(agent, null, sfmt);
-				Agent parent2 = rouletteChoice(agent, parent1, sfmt);
+				Agent parent1=null;
+				Agent parent2=null;
+
+				switch(ip) {
+				case DoubleRouletteIncludeSelf:
+					parent1 = rouletteChoice(agent, null, sfmt);
+					parent2 = rouletteChoice(agent, parent1, sfmt);
+					break;
+
+				case SingleRouletteNotIncludeSelf:
+					parent1 = rouletteChoice(agent, agent, sfmt);
+					parent2 = agent;
+					break;
+				default:
+					System.out.println("Not Define Inheritance Pattern.");
+					System.exit(1);
+				}
+
+
 
 				//uniform cross over
 				uniformCrossOver(agent, networkNumber, parent1, parent2, sfmt);
