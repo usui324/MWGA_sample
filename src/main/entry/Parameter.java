@@ -2,10 +2,10 @@ package main.entry;
 
 public interface Parameter {
 	//Number of Simulation
-	public int NUM_OF_SIMULATION = 10;
+	public int NUM_OF_SIMULATION = 1;
 
 	//Number of Agent
-	public int NUM_OF_AGENT = 1000;
+	public int NUM_OF_AGENT = 20;
 	//Number of Generation
 	public int GENERATION = 2000;
 	//Number of Network
