@@ -20,6 +20,9 @@ public interface Parameter {
 	//CNN
 	public double U_IN_CNN = 0.9;
 
+	//WS
+	public int K_IN_WS = 10;
+	public double BETA_IN_WS = 0.1;
 
 	//My Extend
 	public int TIME_OUT = 10;
@@ -33,7 +36,7 @@ public interface Parameter {
 		DoubleRouletteIncludeSelf,
 		SingleRouletteNotIncludeSelf
 	}
-	public InheritancePattern INHERITANCE = InheritancePattern.SingleRouletteNotIncludeSelf;
+	public InheritancePattern INHERITANCE = InheritancePattern.DoubleRouletteIncludeSelf;
 
 
 	//Dierectory Path

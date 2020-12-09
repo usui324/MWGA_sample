@@ -124,6 +124,16 @@ public class EaMyDiminish extends EvaluateAlgorithm {
 					metaComment.metaComment();
 
 				}
+				Agent metaCommenter = bonus.getMaster();
+
+				prob = sfmt.NextUnif();
+				if(prob > metaCommenter.getS()) continue;
+
+				prob = sfmt.NextUnif();
+				if(prob > metaCommenter.getL().getGeneToDouble()) continue;
+
+				MetaComment metaComment = new MetaComment(metaCommenter, comment);
+				metaComment.metaComment();
 
 			}
 		}

@@ -78,6 +78,15 @@ public class ParameterFile implements Parameter {
 				filewriter.append(String.valueOf(U_IN_CNN));
 				filewriter.append(NEW_LINE);
 				break;
+
+			case "Watts Strogatz":
+				filewriter.append("K : ");
+				filewriter.append(String.valueOf(K_IN_WS));
+				filewriter.append(NEW_LINE);
+				filewriter.append("beta : ");
+				filewriter.append(String.valueOf(BETA_IN_WS));
+				filewriter.append(NEW_LINE);
+				break;
 			}
 
 

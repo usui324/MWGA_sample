@@ -1,7 +1,7 @@
 package main.entry;
 
-import main.evaluate.EaSnsNormsGame;
-import main.network.NmConnectingNearestNeighbor;
+import main.evaluate.EaMySns;
+import main.network.NmWattsStrogatz;
 import output.file.FileTransfer;
 import output.file.ParameterFile;
 import output.file.SetDirectory;
@@ -14,16 +14,17 @@ public class Launcher extends Thread implements Parameter{
 
 //		EaMetaRewardGame ea = new EaMetaRewardGame();
 //		EaDiminishMetaRewardGame ea = new EaDiminishMetaRewardGame();
-		EaSnsNormsGame ea = new EaSnsNormsGame();
+//		EaSnsNormsGame ea = new EaSnsNormsGame();
 //		EaMyDiminish ea = new EaMyDiminish();
-//		EaMySns ea = new EaMySns();
+		EaMySns ea = new EaMySns();
 
 
 		//-----------------------------------------------------------
 
 //		NmCompleteGragh nm = new NmCompleteGragh();
 //		NmBarabasiAlbert nm = new NmBarabasiAlbert();
-		NmConnectingNearestNeighbor nm = new NmConnectingNearestNeighbor();
+//		NmConnectingNearestNeighbor nm = new NmConnectingNearestNeighbor();
+		NmWattsStrogatz nm = new NmWattsStrogatz();
 
 		//-----------------------------------------------------------
 
@@ -44,14 +45,14 @@ public class Launcher extends Thread implements Parameter{
 		//run simulation
 		SubLauncher sl = new SubLauncher(nm, ea, ft);
 		sl.start();
-		SubLauncher sl2 = new SubLauncher(nm, ea, ft);
+		//SubLauncher sl2 = new SubLauncher(nm, ea, ft);
 		//sl2.start();
 
 
 		try {
 
 			sl.join();
-			sl2.join();
+			//sl2.join();
 
 		}catch(InterruptedException e) {
 			System.out.println(e);

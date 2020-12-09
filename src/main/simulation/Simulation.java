@@ -63,6 +63,7 @@ public class Simulation implements Parameter{
 //			}
 //		}
 
+
 		//run mwga
 		for(int generation=0; generation<GENERATION; generation++) {
 
