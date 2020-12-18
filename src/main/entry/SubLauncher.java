@@ -7,22 +7,25 @@ import main.simulation.Simulation;
 import main.utility.Seed;
 import main.utility.Sfmt;
 import output.file.FileTransfer;
+import output.file.SetDirectory;
 
 public class SubLauncher extends Thread implements Parameter{
 
 	Network nm;
 	EvaluateAlgorithm ea;
 	FileTransfer ft;
+	SetDirectory sd;
 
 	Sfmt sfmt;
 
 	private static int simulationTime = 0;
 
 //---------------------------
-	public SubLauncher(Network nm, EvaluateAlgorithm ea, FileTransfer ft) {
+	public SubLauncher(Network nm, EvaluateAlgorithm ea, FileTransfer ft, SetDirectory sd) {
 		this.nm = nm;
 		this.ea = ea;
 		this.ft = ft;
+		this.sd = sd;
 
 		sfmt = new Sfmt(Seed._seeds);
 	}
@@ -56,7 +59,7 @@ public class SubLauncher extends Thread implements Parameter{
 		mn.setMultipleNetwork(network, sfmt);
 
 
-		Simulation simulation = new Simulation(mn, ea, simulationTime, ft);
+		Simulation simulation = new Simulation(mn, ea, simulationTime, sd);
 		simulationTime++;
 
 		return simulation;

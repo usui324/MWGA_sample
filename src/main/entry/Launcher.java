@@ -1,7 +1,7 @@
 package main.entry;
 
 import main.evaluate.EaMySns;
-import main.network.NmWattsStrogatz;
+import main.network.NmCompleteGragh;
 import output.file.FileTransfer;
 import output.file.ParameterFile;
 import output.file.SetDirectory;
@@ -21,10 +21,10 @@ public class Launcher extends Thread implements Parameter{
 
 		//-----------------------------------------------------------
 
-//		NmCompleteGragh nm = new NmCompleteGragh();
+		NmCompleteGragh nm = new NmCompleteGragh();
 //		NmBarabasiAlbert nm = new NmBarabasiAlbert();
 //		NmConnectingNearestNeighbor nm = new NmConnectingNearestNeighbor();
-		NmWattsStrogatz nm = new NmWattsStrogatz();
+//		NmWattsStrogatz nm = new NmWattsStrogatz();
 
 		//-----------------------------------------------------------
 
@@ -32,8 +32,8 @@ public class Launcher extends Thread implements Parameter{
 		long startTime = System.currentTimeMillis();
 
 		//set directory
-		SetDirectory directory = new SetDirectory();
-		String pathName = directory.set();
+		SetDirectory sd = new SetDirectory();
+		String pathName = sd.set();
 
 		//file transfer
 		FileTransfer ft = new FileTransfer(pathName);
@@ -43,7 +43,7 @@ public class Launcher extends Thread implements Parameter{
 		ft.transfer(pf.write());
 
 		//run simulation
-		SubLauncher sl = new SubLauncher(nm, ea, ft);
+		SubLauncher sl = new SubLauncher(nm, ea, ft, sd);
 		sl.start();
 		//SubLauncher sl2 = new SubLauncher(nm, ea, ft);
 		//sl2.start();

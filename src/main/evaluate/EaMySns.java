@@ -99,7 +99,7 @@ public class EaMySns extends EvaluateAlgorithm{
 				commenter.addFitness(M);
 
 				//comment
-				prob = sfmt.NextUnif();
+				/*prob = sfmt.NextUnif();
 				if(prob > commenter.getL().getGeneToDouble()) continue;
 
 				Comment comment = new Comment(commenter, bonus);
@@ -112,7 +112,7 @@ public class EaMySns extends EvaluateAlgorithm{
 				if(prob > metaCommenter.getL().getGeneToDouble()) continue;
 
 				MetaComment metaComment = new MetaComment(metaCommenter, comment);
-				metaComment.metaComment();
+				metaComment.metaComment();*/
 
 			}
 		}

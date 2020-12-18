@@ -10,6 +10,7 @@ import main.utility.Sfmt;
 import output.csv.NetworkProgress;
 import output.csv.NetworkResult;
 import output.file.FileTransfer;
+import output.file.SetDirectory;
 
 public class Simulation implements Parameter{
 	//sfmt
@@ -25,17 +26,17 @@ public class Simulation implements Parameter{
 
 	GeneticAlgorithm ga = new GeneticAlgorithm(INHERITANCE);
 
-	FileTransfer ft;
+	SetDirectory sd;
 
 	//My Extend
 	public int timeout=0;
 
 //----------------------------
-	public Simulation(MultipleNetwork multipleNetwork, EvaluateAlgorithm ea, int time, FileTransfer ft) {
+	public Simulation(MultipleNetwork multipleNetwork, EvaluateAlgorithm ea, int time, SetDirectory sd) {
 		this.multipleNetwork = multipleNetwork;
 		this.ea = ea;
 		simulationTime = time;
-		this.ft = ft;
+		this.sd = sd;
 
 
 		spendRand(time);
@@ -51,6 +52,12 @@ public class Simulation implements Parameter{
 	public void startSimulation(){
 
 		System.out.println("Simulation" + simulationTime + " start.");
+
+		//set internal directory
+		String internalDirectory = sd.setInternal(simulationTime);
+
+		//file transfer
+		FileTransfer ft = new FileTransfer(internalDirectory);
 
 		//ready to record progress
 		NetworkProgress np = new NetworkProgress(simulationTime);
