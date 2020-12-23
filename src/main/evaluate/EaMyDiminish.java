@@ -12,7 +12,7 @@ public class EaMyDiminish extends EvaluateAlgorithm {
 
 	public EaMyDiminish() {
 		super();
-		name = "My Extend from Meta Reward Game with diminish marginal utility";
+		name = "My_Diminish";
 	}
 
 //------------------------------

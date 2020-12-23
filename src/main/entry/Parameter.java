@@ -5,9 +5,9 @@ public interface Parameter {
 	public int NUM_OF_SIMULATION = 30;
 
 	//Number of Agent
-	public int NUM_OF_AGENT = 1000;//
+	public int NUM_OF_AGENT = 1000;
 	//Number of Generation
-	public int GENERATION = 2000;//
+	public int GENERATION = 2000;
 	//Number of Network
 	public int NUM_OF_NETWORK = 30;
 	//GeneticAlgorithm

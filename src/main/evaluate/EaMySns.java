@@ -12,7 +12,7 @@ public class EaMySns extends EvaluateAlgorithm{
 
 	public EaMySns() {
 		super();
-		name = "SNS-norms Game";
+		name = "My_SNS-norms Game";
 	}
 //--------------------------------
 	@Override
