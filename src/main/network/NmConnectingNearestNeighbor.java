@@ -59,6 +59,8 @@ public class NmConnectingNearestNeighbor extends Network{
 
 				//remove selected
 				potentialEdgeList.remove(potentialEdge);
+
+				System.out.println("U: " + potentialEdgeList.size());
 			}
 
 			//add agent
@@ -72,11 +74,13 @@ public class NmConnectingNearestNeighbor extends Network{
 				Agent bgent = agentList.get(potentialEdgeRand);
 				for(Link link : bgent.linkList) {
 
-					potentialEdgeList.add(new Link(link));
+					potentialEdgeList.add(new Link(agent, link.getTo()));
 				}
 
 				addBothSideLink(agent, bgent);
 				addAgent(agent, sfmt);
+
+				System.out.println("1-U: " + potentialEdgeList.size());
 			}
 
 		}

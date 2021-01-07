@@ -1,7 +1,7 @@
 package main.entry;
 
-import main.evaluate.EaMySns;
-import main.network.NmCompleteGragh;
+import main.evaluate.EaSnsNormsGame;
+import main.network.NmConnectingNearestNeighbor;
 import output.file.FileTransfer;
 import output.file.ParameterFile;
 import output.file.SetDirectory;
@@ -14,16 +14,16 @@ public class Launcher extends Thread implements Parameter{
 
 //		EaMetaRewardGame ea = new EaMetaRewardGame();
 //		EaDiminishMetaRewardGame ea = new EaDiminishMetaRewardGame();
-//		EaSnsNormsGame ea = new EaSnsNormsGame();
+		EaSnsNormsGame ea = new EaSnsNormsGame();
 //		EaMyDiminish ea = new EaMyDiminish();
-		EaMySns ea = new EaMySns();
+//		EaMySns ea = new EaMySns();
 
 
 		//-----------------------------------------------------------
 
-		NmCompleteGragh nm = new NmCompleteGragh();
+//		NmCompleteGragh nm = new NmCompleteGragh();
 //		NmBarabasiAlbert nm = new NmBarabasiAlbert();
-//		NmConnectingNearestNeighbor nm = new NmConnectingNearestNeighbor();
+		NmConnectingNearestNeighbor nm = new NmConnectingNearestNeighbor();
 //		NmWattsStrogatz nm = new NmWattsStrogatz();
 
 		//-----------------------------------------------------------
