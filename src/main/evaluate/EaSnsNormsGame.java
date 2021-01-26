@@ -32,8 +32,9 @@ public class EaSnsNormsGame extends EvaluateAlgorithm{
 				}
 
 				//post phase
-				prob = sfmt.NextUnif();
-				if(prob > poster.getB().getGeneToDouble()) continue;
+				//prob = sfmt.NextUnif();
+				//if(prob > poster.getB().getGeneToDouble()) continue;
+				if(poster.getS() >= 1 - poster.getB().getGeneToDouble()) continue;
 
 				Article article = new Article(poster);
 				article.post();
@@ -92,7 +93,9 @@ public class EaSnsNormsGame extends EvaluateAlgorithm{
 
 			for(Comment comment : article.commentList) {
 
-				double metaCommentReward = RN * Math.log(comment.metaCommentList.size() + 1);
+				//try to get out of log
+				//double metaCommentReward = RN * Math.log(comment.metaCommentList.size() + 1);
+				double metaCommentReward = RN * comment.metaCommentList.size();
 
 //				if(comment.getMaster() == network.agentList.get(X)) {
 //					System.out.println("getm bofore:"+ comment.getMaster().getFitness());

@@ -1,6 +1,6 @@
 package main.entry;
 
-import main.evaluate.EaSnsNormsGame;
+import main.evaluate.EaMySns;
 import main.network.NmConnectingNearestNeighbor;
 import output.file.FileTransfer;
 import output.file.ParameterFile;
@@ -14,9 +14,9 @@ public class Launcher extends Thread implements Parameter{
 
 //		EaMetaRewardGame ea = new EaMetaRewardGame();
 //		EaDiminishMetaRewardGame ea = new EaDiminishMetaRewardGame();
-		EaSnsNormsGame ea = new EaSnsNormsGame();
+//		EaSnsNormsGame ea = new EaSnsNormsGame();
 //		EaMyDiminish ea = new EaMyDiminish();
-//		EaMySns ea = new EaMySns();
+		EaMySns ea = new EaMySns();
 
 
 		//-----------------------------------------------------------
