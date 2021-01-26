@@ -33,8 +33,9 @@ public class EaMyDiminish extends EvaluateAlgorithm {
 				}
 
 				//post phase
-				prob = sfmt.NextUnif();
-				if(prob > poster.getB().getGeneToDouble()) continue;
+				//prob = sfmt.NextUnif();
+				//if(prob > poster.getB().getGeneToDouble()) continue;
+				if(poster.getS() >= 1 - poster.getB().getGeneToDouble()) continue;
 
 				Article article = new Article(poster);
 				article.post();
