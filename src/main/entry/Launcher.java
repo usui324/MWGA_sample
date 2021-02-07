@@ -12,19 +12,11 @@ public class Launcher extends Thread implements Parameter{
 
 		//-----------------------------------------------------------
 
-//		EaMetaRewardGame ea = new EaMetaRewardGame();
-//		EaDiminishMetaRewardGame ea = new EaDiminishMetaRewardGame();
-//		EaSnsNormsGame ea = new EaSnsNormsGame();
-//		EaMyDiminish ea = new EaMyDiminish();
-		EaMySns ea = new EaMySns();
-
+		EaMetaRewardGame ea = new EaMetaRewardGame();
 
 		//-----------------------------------------------------------
 
-//		NmCompleteGragh nm = new NmCompleteGragh();
-//		NmBarabasiAlbert nm = new NmBarabasiAlbert();
-		NmConnectingNearestNeighbor nm = new NmConnectingNearestNeighbor();
-//		NmWattsStrogatz nm = new NmWattsStrogatz();
+		NmCompleteGragh nm = new NmCompleteGragh();
 
 		//-----------------------------------------------------------
 
