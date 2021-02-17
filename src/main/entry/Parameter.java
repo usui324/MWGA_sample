@@ -40,7 +40,7 @@ public interface Parameter {
 
 
 	//Dierectory Path
-	public final String DIRECTORY_PATH = "C:\\Users\\yuora\\OneDrive\\デスクトップ\\cache\\";
+	public final String DIRECTORY_PATH = "PATHを入力\\";
 	//public final String DERECTORY_PATH = "C:\\Users\\y.usui\\Desktop\\";
 
 }
